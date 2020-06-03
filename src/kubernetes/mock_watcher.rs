@@ -68,9 +68,9 @@ where
 }
 
 #[pin_project]
-struct MockWatcherStream<T, FS> {
-    data_type: PhantomData<T>,
-    stream_fn: FS,
+pub(super) struct MockWatcherStream<T, FS> {
+    pub(super) data_type: PhantomData<T>,
+    pub(super) stream_fn: FS,
 }
 
 impl<T, FS> Stream for MockWatcherStream<T, FS>

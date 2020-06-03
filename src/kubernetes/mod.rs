@@ -21,6 +21,8 @@
 #![warn(missing_docs)]
 
 pub mod api_watcher;
+pub mod async_mock_watcher;
+pub mod chan_mock_watcher;
 pub mod client;
 pub mod delayed_delete;
 pub mod hash_value;

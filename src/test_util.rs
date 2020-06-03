@@ -236,7 +236,7 @@ where
 pub fn block_on_std<F>(future: F) -> F::Output
 where
     F: std::future::Future + Send + 'static,
-    F::Output: Send + 'static,
+    F::Output: Send,
 {
     let mut rt = runtime();
 

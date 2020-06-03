@@ -34,7 +34,7 @@ impl<T> DelayedDelete<T> {
     /// Perform the queued deletions.
     pub fn perform(&mut self, state_writer: &mut impl state::Write<Item = T>)
     where
-        T: Metadata<Ty = ObjectMeta>,
+        T: Metadata<Ty = ObjectMeta> + Send,
     {
         let now = Instant::now();
         while let Some(deadline) = self.next_deadline() {
